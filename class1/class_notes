@@ -13,3 +13,6 @@ Class 1; 13.02.17
 * to send file across
   ## scp filename.txt student@139.59.23.184:filename.txt
   * the above code will send filename.txt to the remote terminal at the specified location
+
+== GIT CAN ALSO BE POINTED TO LOCAL SERVER ==
+# git remote add origin ssh://student@139.59.23.184
