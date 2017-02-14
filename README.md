@@ -1,4 +1,4 @@
 # contact
 
-awesome course guys! 
-	-nav
+"awesome course guys!"
+		  -nav
