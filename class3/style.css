@@ -1,0 +1,47 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+p{
+	margin-top: 20px;
+}
+
+.head{
+	height: 100px;
+	background-color: grey;
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.root{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	height: 200px;
+	width: 40%;
+	background-color: #eee;
+	justify-content: center;
+	align-items: center;
+}
+
+.foot{
+	position: fixed;
+	background-color: #222;
+	height: 100px;
+	width: 100%;
+	color: white;
+	bottom: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}

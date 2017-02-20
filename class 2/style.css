@@ -1,0 +1,48 @@
+.box {
+
+	display: block;
+
+	/*position: absolute;
+	top: 100px;
+	left: 10px;*/
+
+	position: fixed;
+
+	left: calc(50%-180);
+
+	margin: 50px;
+	padding: 30px;
+	height: 100px;
+	width: 100px;
+	
+	background-color: green;
+}
+
+.box2 {
+
+	display: block;
+
+	/*position: absolute;
+	top: 100px;
+	left: 170px; --> This is called a magic number */
+
+	margin: 50px;
+	padding: 30px;
+	height: 100px;
+	width: 100px;
+	background-color: green;
+}
+
+/*.box:hover{
+
+	display: block;
+	margin: 50px;
+	padding: 30px;
+	height: 100px;
+	width: 100px;
+	border-color: orange;
+	border-width: 50px;
+	border-style: dashed;
+	background-color: green;
+	transition: border 1s;
+}*/

@@ -1,0 +1,20 @@
+=======
+CLASS 3
+=======
+
+* box model:
+  |---margin
+  |---border
+  |---padding
+
+* With position='absolute', calculating top, left, bottom, right etc. is called as 'magic number'. Doing this is a bad practice, because it may tear the website in other devices.
+
+* div has no property. it is completely clean.
+
+* pseudo
+
+* flex-direction: row (or) 
+
+* flexbox creates axis:
+	align-items: center; // would align along cross axis
+	justify-items: center; // would align along primary axis
