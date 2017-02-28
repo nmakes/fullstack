@@ -27,3 +27,47 @@ Javascript
 	
 	$ parseInt(NaN)
 	-> NaN
+
+* Everything that waits for I/O/Err is synchronous. Javascript is asynchronous. 
+
+	var x = function(){
+		CallServer(function() {
+			console.log('server call done');
+		})
+	}
+
+	var CallServer = function(callback){
+		// packet received
+		callback();
+	}
+
+	Here we want a callback because, if we wrote log inside x(), like so:
+
+		var x = function(){
+			CallServer();
+			console.log('server call done');
+		}
+
+	But, JS will not wait for CallServer() to finish. It is asynchronous. So, it will just call CallServer() and move to the next statement and print the log, REGARDLESS OF WHETHER CallServer() finished or not.
+
+	So, we do the following:
+
+		var x = function() { CallServer ( printerFunction ); }
+
+		var CallServer = function( PrintFunc ) {
+			// statements that will do the CallServer activity
+			PrintFunc()
+		}
+
+* JavaScript has an event loop. Any function call is passed on to the event queue. So, in the timer, say we do the following:
+	$ setInterval(function(){}, 1000);
+	- It won't exec after every 1s exactly, because, the event loop may not be free. Hence, we find little errors in our timer.
+
+* Making a timer:
+
+	$ var x = document.getElementById("test");
+	$ x.style.color = 'blue'
+	$ x.innerHTML('hello')
+
+	// also has getElementByTagName('div') -> returns all divs as an array
+	// x[0] will be the first div and so on --- QUERY SELECTORS (READ ABOUT THEM)
