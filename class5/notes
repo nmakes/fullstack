@@ -1,0 +1,29 @@
+=======
+CLASS 5
+=======
+
+Javascript
+----------
+
+* Everything is an object
+* var x = { ... anything ... }
+	- can be a function
+	- can be a string
+* Javascript is for the future. Soon all devices will run JS.
+* An array can also store function, object etc etc.
+
+* START NODE BY WRITING AND TYPE THE FOLLOWING:
+	
+	$ node
+
+	$ var x = {};
+	-> undefined
+
+	$ var x = {'name': 'tset'};
+	-> undefined
+
+	$ parseInt('136')
+	-> 136
+	
+	$ parseInt(NaN)
+	-> NaN
