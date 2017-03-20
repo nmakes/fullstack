@@ -1,0 +1,71 @@
+-- READ ABOUT CLOSURES, CALLBACKS, PROTOTYPE CHAINING --
+-------------------------
+
+var obj = new foo(); // foo is a constructor
+
+function foo(){
+	this.somevalue = 5;
+}
+
+foo.prototype = {
+	increment = function(){
+		this.somevalue++;
+	}
+}
+
+/* 
+	obj.__proto__.__proto__ ...
+	will give the prototype chain
+
+	function inherits from function prototype inherits from object prototype inherits from NULL.
+*/
+
+/* eg 2 - dynamic scoping of "this" */
+
+function foo(){
+	this.value = 5;
+	var y = 10;
+	this.returnBar = function() {
+		return this.value;
+	}
+}
+
+var obj = new foo();
+console.log(obj.returnBar()); // obj.returnBar returns 5 because obj has var value = 5
+var x = obj.returnBar;
+console.log(x()); // here "this" would bind to x, which doesn't have the var value. So it gives undefined.
+
+/* eg 3 - a function where we store functions */
+
+/* we have an object where we have the following loop: */
+
+for(var i =0; i<10; i++)
+{
+	y[i] = function(){
+		this.a++;
+	}
+}
+
+// in the previous example
+
+x.call(obj) - prints 5
+
+call - give arguments separated by comma
+apply - give arguments in array
+bind - returns a funtion bound to an object 
+		var a = x.bind(obj)
+		a() will print 5
+
+
+-------------
+Globally defining variable won't be helpful because, it will ultimately go to a global scope. We won't be able to separate it out from another variable which would encapsulate it. So, we should make a wrapper object and declare variable inside it, always.
+-------------
+
+type google.com
+	- goes to DNS server where the name resolution takes place
+	- (there are millions of DNS servers, because google can't be stored in one PC), it forwards to some other DNS server which knows it.
+	- this process continues till a DNS server knows what google.com is and returns the IP address.
+	- After this, the request goes to a router (switch) / server which says "yes I'm this IP, I'll give you the data". MITM - "man in the middle" attack. Someone else starts saying that I'm the IP that is google.com. But this is protected by SSL/SSH encryption.
+	- The switch goes to some other server which would have the IP of google, and then returns the data.
+
+Sometimes, browsers cache even the request and response packets. So, the site would be runing in your system, but not in someone else's.
